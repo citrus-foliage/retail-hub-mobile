@@ -1,0 +1,48 @@
+name: retailhub
+description: "Flutter mobile application for browsing and purchasing products, built with Firebase and Dart."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── Firebase (FlutterFire unified SDK, all v3/v5 series for Flutter 3.x) ──
+  firebase_core: ^4.6.0   # Core initialisation — must match auth + firestore
+  firebase_auth: ^6.3.0   # Authentication — email/password
+  cloud_firestore: ^6.2.0   # Realtime database reads/writes/streams
+
+  # ── State management ───────────────────────────────────────────────────────
+  provider: ^6.1.2           # ChangeNotifier + ProxyProvider
+
+  # ── Navigation ─────────────────────────────────────────────────────────────
+  go_router: ^17.1.0         # Declarative routing with redirect guards
+
+  # ── UI / Fonts ─────────────────────────────────────────────────────────────
+  google_fonts: ^8.0.2   # Cormorant Garamond headings
+  cached_network_image: ^3.3.1   # Cached product image loading
+  shimmer:              ^3.0.0   # Skeleton loading placeholders
+
+  # ── Utilities ──────────────────────────────────────────────────────────────
+  intl: ^0.20.2   # Date + currency formatting (keep in sync with Flutter intl)
+  uuid:             ^4.4.2    # Order ID generation
+  haptic_feedback: ^0.6.4+3  # Tactile feedback on primary actions
+  shared_preferences: ^2.3.3  # Cart persistence across app restarts
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0   # Lint rules (analysis_options.yaml)
+
+flutter:
+  uses-material-design: true
+  # To add custom font assets uncomment and populate:
+  # fonts:
+  #   - family: Inter
+  #     fonts:
+  #       - asset: assets/fonts/Inter-Regular.ttf
+  #       - asset: assets/fonts/Inter-SemiBold.ttf
+  #         weight: 600

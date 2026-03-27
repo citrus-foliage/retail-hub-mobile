@@ -1,0 +1,26 @@
+# analysis_options.yaml
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # Enforce const constructors wherever possible
+    prefer_const_constructors: true
+    prefer_const_literals_to_create_immutables: true
+    # Avoid print statements in production
+    avoid_print: true
+    # Enforce explicit types on public APIs
+    always_declare_return_types: true
+    # Good widget practices
+    use_key_in_widget_constructors: false   # We use super.key throughout
+    sized_box_for_whitespace: true
+    # Null safety
+    avoid_unnecessary_null_checks: true
+
+analyzer:
+  errors:
+    # Treat missing return types as warnings not errors during dev
+    missing_return: warning
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - lib/firebase_options.dart  # auto-generated
