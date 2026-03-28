@@ -22,7 +22,7 @@ service cloud.firestore {
       allow read:   if isOwner(uid) || isAdmin();
       allow create: if isOwner(uid);
       allow update: if isOwner(uid) || isAdmin();
-      allow delete: if isAdmin();
+      allow delete: if isOwner(uid) || isAdmin();
 
       match /wishlists/{productId} {
         allow read, write: if isOwner(uid);

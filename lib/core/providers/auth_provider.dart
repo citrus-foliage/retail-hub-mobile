@@ -191,7 +191,11 @@ class AuthProvider extends ChangeNotifier {
       _errorMessage = _friendlyError(e.code);
       notifyListeners();
       return false;
-    } catch (_) { return false; }
+    } catch (e) {
+      _errorMessage = 'Failed to delete account. Please try again.';
+      notifyListeners();
+      return false;
+    }
   }
 
   Future<void> signOut() async { await _auth.signOut(); }
